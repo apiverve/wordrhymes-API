@@ -1,0 +1,32 @@
+{
+  "name": "@apiverve/wordrhymes",
+  "version": "1.0.0",
+  "description": "Word Rhymes is a simple tool for getting word rhymes. It returns a list of rhyming words.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apiverve/wordrhymes-API.git"
+  },
+  "keywords": [
+    "word rhymes"," word rhymes generator"," word rhymes api"," word rhymes tool"," word rhymes software"," word rhymes service"," word rhymes library"," word rhymes sdk"," word rhymes code"," word rhymes script"," word rhymes program"," word rhymes application"," word rhymes app"," word rhymes utility"," word rhymes helper"," word rhymes helper tool"," word rhymes helper software"," word rhymes helper service"," word rhymes helper library"," word rhymes helper sdk"," word rhymes helper code"," word rhymes helper script"," word rhymes helper program"," word rhymes helper application"," word rhymes helper app"," word rhymes helper tool"," word rhymes helper utility"," word rhymes helper"
+  ],
+  "author": "APIVerve <hello@apiverve.com> (http://apiverve.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apiverve/wordrhymes-API/issues"
+  },
+  "homepage": "https://github.com/apiverve/wordrhymes-API",
+  "devDependencies": {
+    "mocha": "^2.3.4",
+    "chai": "^3.4.1",
+    "dotenv": "^2.0.0"
+  },
+  "dependencies": {
+    "node-fetch": "3.3.2",
+    "promise": "^7.1.1",
+    "request": "^2.69.0"
+  }
+}
