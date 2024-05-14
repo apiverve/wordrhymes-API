@@ -11,7 +11,7 @@
     "url": "git+https://github.com/apiverve/wordrhymes-API.git"
   },
   "keywords": [
-    "word rhymes"," word rhymes generator"," word rhymes api"," word rhymes tool"," word rhymes software"," word rhymes service"," word rhymes library"," word rhymes sdk"," word rhymes code"," word rhymes script"," word rhymes program"," word rhymes application"," word rhymes app"," word rhymes utility"," word rhymes helper"," word rhymes helper tool"," word rhymes helper software"," word rhymes helper service"," word rhymes helper library"," word rhymes helper sdk"," word rhymes helper code"," word rhymes helper script"," word rhymes helper program"," word rhymes helper application"," word rhymes helper app"," word rhymes helper tool"," word rhymes helper utility"," word rhymes helper"
+    "word rhymes","word rhymes generator","word rhymes api","word rhymes tool","word rhymes software"
   ],
   "author": "APIVerve <hello@apiverve.com> (http://apiverve.com/)",
   "license": "MIT",
@@ -27,6 +27,6 @@
   "dependencies": {
     "node-fetch": "3.3.2",
     "promise": "^7.1.1",
-    "request": "^2.69.0"
+    "axios": "^0.15.3"
   }
 }
