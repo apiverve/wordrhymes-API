@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/wordrhymes",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Word Rhymes is a simple tool for getting word rhymes. It returns a list of rhyming words.",
   "main": "index.js",
   "scripts": {
