@@ -175,7 +175,8 @@ api.execute(query, function (error, data) {
         "word": "loux"
       }
     ]
-  }
+  },
+  "code": 200
 }
 ```
 
