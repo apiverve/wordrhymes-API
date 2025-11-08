@@ -1,5 +1,4 @@
-Rhyming Words API
-============
+# Rhyming Words API
 
 Word Rhymes is a simple tool for getting word rhymes. It returns a list of rhyming words.
 
@@ -7,54 +6,62 @@ Word Rhymes is a simple tool for getting word rhymes. It returns a list of rhymi
 ![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Javascript Wrapper for the [Rhyming Words API](https://apiverve.com/marketplace/api/wordrhymes)
+This is a Javascript Wrapper for the [Rhyming Words API](https://apiverve.com/marketplace/wordrhymes)
 
 ---
 
 ## Installation
-	npm install @apiverve/wordrhymes --save
+
+Using npm:
+```shell
+npm install @apiverve/wordrhymes
+```
+
+Using yarn:
+```shell
+yarn add @apiverve/wordrhymes
+```
 
 ---
 
 ## Configuration
 
-Before using the wordrhymes API client, you have to setup your account and obtain your API Key.  
+Before using the Rhyming Words API client, you have to setup your account and obtain your API Key.
 You can get it by signing up at [https://apiverve.com](https://apiverve.com)
 
 ---
 
-## Usage
+## Quick Start
 
-The Rhyming Words API documentation is found here: [https://docs.apiverve.com/api/wordrhymes](https://docs.apiverve.com/api/wordrhymes).  
+[Get started with the Quick Start Guide](https://docs.apiverve.com/quickstart)
+
+The Rhyming Words API documentation is found here: [https://docs.apiverve.com/ref/wordrhymes](https://docs.apiverve.com/ref/wordrhymes).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
-```
-var wordrhymesAPI = require('@apiverve/wordrhymes');
-var api = new wordrhymesAPI({
-    api_key: [YOUR_API_KEY],
-    secure: true //(Optional, defaults to true)
+```javascript
+const wordrhymesAPI = require('@apiverve/wordrhymes');
+const api = new wordrhymesAPI({
+    api_key: '[YOUR_API_KEY]'
 });
 ```
 
 ---
 
+## Usage
+
+---
 
 ### Perform Request
-Using the API client, you can perform requests to the API.
 
-###### Define Query
+Using the API is simple. All you have to do is make a request. The API will return a response with the data you requested.
 
-```
+```javascript
 var query = {
   word: "blue"
 };
-```
 
-###### Simple Request (using Callback)
-
-```
 api.execute(query, function (error, data) {
     if (error) {
         return console.error(error);
@@ -64,9 +71,52 @@ api.execute(query, function (error, data) {
 });
 ```
 
-###### Example Response
+---
 
+### Using Promises
+
+You can also use promises to make requests. The API returns a promise that you can use to handle the response.
+
+```javascript
+var query = {
+  word: "blue"
+};
+
+api.execute(query)
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error(error);
+    });
 ```
+
+---
+
+### Using Async/Await
+
+You can also use async/await to make requests. The API returns a promise that you can use to handle the response.
+
+```javascript
+async function makeRequest() {
+    var query = {
+  word: "blue"
+};
+
+    try {
+        const data = await api.execute(query);
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+```
+
+---
+
+## Example Response
+
+```json
 {
   "status": "ok",
   "error": null,
@@ -175,8 +225,7 @@ api.execute(query, function (error, data) {
         "word": "loux"
       }
     ]
-  },
-  "code": 200
+  }
 }
 ```
 
@@ -189,6 +238,7 @@ Need any assistance? [Get in touch with Customer Support](https://apiverve.com/c
 ---
 
 ## Updates
+
 Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Twitter.
 
 ---
