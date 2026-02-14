@@ -1,32 +1,41 @@
 openapi: 3.0.4
 info:
   title: Rhyming Words
-  description: Word Rhymes is a simple tool for getting word rhymes. It returns a list of rhyming words.
+  description: >-
+    Word Rhymes is a simple tool for getting word rhymes. It returns a list of
+    rhyming words.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/wordrhymes:
     get:
       summary: Get Rhyming Words
-      description: Word Rhymes is a simple tool for getting word rhymes. It returns a list of rhyming words.
+      description: Get a list of words that rhyme with the specified word
       operationId: wordrhymes
       parameters:
-      - name: word
-        in: query
-        schema:
-          type: string
-        required: true
-        description: The word for which you want to get rhyming words
-        example: blue
+        - name: word
+          in: query
+          schema:
+            type: string
+          required: true
+          description: The word for which you want to get rhyming words
+          example: blue
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          required: false
+          description: Limit the number of word rhymes returned
+          example: 30
       responses:
         '200':
           description: Successful Response
@@ -42,81 +51,31 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
                   word: blue
-                  rhymeCount: 20
+                  rhymeCount: 10
                   rhymes:
-                  - score: 3
-                    pron: D EH2 B L UW1
-                    word: deblois
-                  - score: 2
-                    pron: B AH0 L UW1
-                    word: ballou
-                  - score: 2
-                    pron: B IH0 L UW1
-                    word: bellew
-                  - score: 2
-                    pron: K EH2 R AH0 L UW1
-                    word: carilou
-                  - score: 2
-                    pron: SH AH0 L UW1
-                    word: chaloux
-                  - score: 2
-                    pron: K L UW1
-                    word: clue
-                  - score: 2
-                    pron: F L UW1
-                    word: flew
-                  - score: 2
-                    pron: F L UW1
-                    word: flu
-                  - score: 2
-                    pron: F L UW1
-                    word: flue
-                  - score: 2
-                    pron: G L UW1
-                    word: glew
-                  - score: 2
-                    pron: G L UW1
-                    word: glue
-                  - score: 2
-                    pron: HH AH2 L AH0 B AH0 L UW1
-                    word: hullabaloo
-                  - score: 2
-                    pron: K L UW1
-                    word: klu
-                  - score: 2
-                    pron: L UW1
-                    word: leu
-                  - score: 2
-                    pron: L UW1
-                    word: lew
-                  - score: 2
-                    pron: L UW1
-                    word: lieu
-                  - score: 2
-                    pron: L UW1
-                    word: loo
-                  - score: 2
-                    pron: L UW1
-                    word: lou
-                  - score: 2
-                    pron: L UW1
-                    word: louw
-                  - score: 2
-                    pron: L UW1
-                    word: loux
+                    - deblois
+                    - ballou
+                    - bellew
+                    - carilou
+                    - chaloux
+                    - clue
+                    - flew
+                    - flu
+                    - flue
+                    - glew
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -124,4 +83,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
