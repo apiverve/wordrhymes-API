@@ -1,9 +1,18 @@
 {
   "name": "@apiverve/wordrhymes",
-  "version": "1.1.12",
+  "version": "1.1.13",
   "description": "Word Rhymes is a simple tool for getting word rhymes. It returns a list of rhyming words.",
   "main": "index.js",
   "types": "index.d.ts",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "LICENSE"
+  ],
   "scripts": {
     "test": "mocha",
     "example": "node examples/basic.js"
@@ -14,14 +23,18 @@
     "directory": "npm"
   },
   "keywords": [
-    "word rhymes", "word rhymes generator", "word rhymes api", "word rhymes tool", "word rhymes software"
+    ""
   ],
-  "author": "APIVerve <hello@apiverve.com> (http://apiverve.com/)",
+  "author": {
+    "name": "APIVerve",
+    "email": "hello@apiverve.com",
+    "url": "https://apiverve.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/apiverve/wordrhymes-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/wordrhymes?utm_source=npm",
+  "homepage": "https://wordrhymes.apiverve.com?utm_source=npm&utm_medium=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
