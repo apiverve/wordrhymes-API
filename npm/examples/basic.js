@@ -15,7 +15,8 @@ const api = new wordrhymesAPI({
 
 // Example query
 var query = {
-  word: "blue"
+  word: "blue",
+  limit: 10
 };
 
 // Make the API request using callback
