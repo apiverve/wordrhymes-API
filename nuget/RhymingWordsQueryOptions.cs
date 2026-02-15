@@ -12,9 +12,14 @@ namespace APIVerve.API.RhymingWords
     {
         /// <summary>
         /// The word for which you want to get rhyming words
-        /// Example: blue
         /// </summary>
         [JsonProperty("word")]
         public string Word { get; set; }
+
+        /// <summary>
+        /// Limit the number of word rhymes returned
+        /// </summary>
+        [JsonProperty("limit")]
+        public string Limit { get; set; }
     }
 }
