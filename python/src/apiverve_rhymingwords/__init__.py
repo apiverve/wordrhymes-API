@@ -1,1 +1,3 @@
-from .apiClient import WordrhymesAPIClient
+from .apiClient import WordrhymesAPIClient, WordrhymesAPIClientError
+
+__all__ = ['WordrhymesAPIClient', 'WordrhymesAPIClientError']
