@@ -44,7 +44,10 @@ from apiverve_rhymingwords.apiClient import WordrhymesAPIClient
 # Initialize the client with your APIVerve API key
 api = WordrhymesAPIClient("[YOUR_API_KEY]")
 
-query = { "word": "blue", "limit": 10 }
+query = {
+    "word": "blue",
+    "limit": 10
+}
 
 try:
     # Make the API call
@@ -82,7 +85,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "word": "blue", "limit": 10 }
+query = {
+    "word": "blue",
+    "limit": 10
+}
 ```
 
 ###### Simple Request
@@ -223,7 +229,10 @@ from apiverve_rhymingwords.apiClient import WordrhymesAPIClient, WordrhymesAPICl
 
 api = WordrhymesAPIClient("[YOUR_API_KEY]")
 
-query = { "word": "blue", "limit": 10 }
+query = {
+    "word": "blue",
+    "limit": 10
+}
 
 try:
     result = api.execute(query)
@@ -244,7 +253,10 @@ from apiverve_rhymingwords.apiClient import WordrhymesAPIClient, WordrhymesAPICl
 
 api = WordrhymesAPIClient("[YOUR_API_KEY]")
 
-query = { "word": "blue", "limit": 10 }
+query = {
+    "word": "blue",
+    "limit": 10
+}
 
 try:
     result = api.execute(query)
@@ -278,7 +290,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_rhymingwords.apiClient import WordrhymesAPIClient, WordrhymesAPIClientError
 
-query = { "word": "blue", "limit": 10 }
+query = {
+    "word": "blue",
+    "limit": 10
+}
 
 # Using context manager ensures proper cleanup
 with WordrhymesAPIClient("[YOUR_API_KEY]") as api:
@@ -304,7 +319,10 @@ from apiverve_rhymingwords.apiClient import WordrhymesAPIClient
 # Enable debug mode
 api = WordrhymesAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "word": "blue", "limit": 10 }
+query = {
+    "word": "blue",
+    "limit": 10
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -319,8 +337,12 @@ from apiverve_rhymingwords.apiClient import WordrhymesAPIClient
 
 api = WordrhymesAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "word": "blue",
+    "limit": 10
+}
+
 try:
-    query = { "word": "blue", "limit": 10 }
     result = api.execute(query)
     print(result)
 finally:
