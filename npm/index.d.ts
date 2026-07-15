@@ -4,24 +4,30 @@ declare module '@apiverve/wordrhymes' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface wordrhymesResponse {
     status: string;
     error: string | null;
     data: RhymingWordsData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface RhymingWordsData {
-      word:       string;
-      rhymeCount: number;
-      rhymes:     Rhyme[];
-  }
-  
-  interface Rhyme {
-      score: number;
-      pron:  string;
-      word:  string;
+      word:       null | string;
+      rhymeCount: number | null;
+      rhymes:     (null | string)[];
   }
 
   export default class wordrhymesWrapper {
