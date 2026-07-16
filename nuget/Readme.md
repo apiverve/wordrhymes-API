@@ -51,7 +51,7 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.RhymingWords;
 
 class Program
 {
@@ -60,9 +60,9 @@ class Program
         // Initialize the API client
         var apiClient = new RhymingWordsAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    word = "blue",
-    limit = 10
+        var queryOptions = new RhymingWordsQueryOptions {
+    Word = "blue",
+    Limit = 10
 };
 
         // Make the API call
@@ -117,7 +117,7 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.RhymingWords;
 
 public class Example
 {
@@ -125,9 +125,9 @@ public class Example
     {
         var apiClient = new RhymingWordsAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    word = "blue",
-    limit = 10
+        var queryOptions = new RhymingWordsQueryOptions {
+    Word = "blue",
+    Limit = 10
 };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -150,7 +150,7 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.RhymingWords;
 
 public class Example
 {
@@ -158,9 +158,9 @@ public class Example
     {
         var apiClient = new RhymingWordsAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    word = "blue",
-    limit = 10
+        var queryOptions = new RhymingWordsQueryOptions {
+    Word = "blue",
+    Limit = 10
 };
 
         var response = apiClient.Execute(queryOptions);
@@ -188,7 +188,7 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.RhymingWords;
 
 public class Example
 {
@@ -196,9 +196,9 @@ public class Example
     {
         var apiClient = new RhymingWordsAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    word = "blue",
-    limit = 10
+        var queryOptions = new RhymingWordsQueryOptions {
+    Word = "blue",
+    Limit = 10
 };
 
         try
@@ -241,7 +241,7 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.RhymingWords;
 
 public class Example
 {
@@ -253,9 +253,9 @@ public class Example
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new QueryOptions {
-    word = "blue",
-    limit = 10
+        var queryOptions = new RhymingWordsQueryOptions {
+    Word = "blue",
+    Limit = 10
 };
 
         try
@@ -295,9 +295,9 @@ var apiClient = new RhymingWordsAPIClient("[YOUR_API_KEY]");
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new QueryOptions {
-    word = "blue",
-    limit = 10
+var queryOptions = new RhymingWordsQueryOptions {
+    Word = "blue",
+    Limit = 10
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -322,9 +322,9 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new QueryOptions {
-    word = "blue",
-    limit = 10
+var queryOptions = new RhymingWordsQueryOptions {
+    Word = "blue",
+    Limit = 10
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -341,9 +341,9 @@ var apiClient = new RhymingWordsAPIClient("[YOUR_API_KEY]");
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new QueryOptions {
-    word = "blue",
-    limit = 10
+var queryOptions = new RhymingWordsQueryOptions {
+    Word = "blue",
+    Limit = 10
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -354,9 +354,9 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new QueryOptions {
-    word = "blue",
-    limit = 10
+var queryOptions = new RhymingWordsQueryOptions {
+    Word = "blue",
+    Limit = 10
 };
 
 using (var apiClient = new RhymingWordsAPIClient("[YOUR_API_KEY]"))
@@ -377,108 +377,18 @@ using (var apiClient = new RhymingWordsAPIClient("[YOUR_API_KEY]"))
   "error": null,
   "data": {
     "word": "blue",
-    "rhymeCount": 20,
+    "rhymeCount": 10,
     "rhymes": [
-      {
-        "score": 3,
-        "pron": "D EH2 B L UW1",
-        "word": "deblois"
-      },
-      {
-        "score": 2,
-        "pron": "B AH0 L UW1",
-        "word": "ballou"
-      },
-      {
-        "score": 2,
-        "pron": "B IH0 L UW1",
-        "word": "bellew"
-      },
-      {
-        "score": 2,
-        "pron": "K EH2 R AH0 L UW1",
-        "word": "carilou"
-      },
-      {
-        "score": 2,
-        "pron": "SH AH0 L UW1",
-        "word": "chaloux"
-      },
-      {
-        "score": 2,
-        "pron": "K L UW1",
-        "word": "clue"
-      },
-      {
-        "score": 2,
-        "pron": "F L UW1",
-        "word": "flew"
-      },
-      {
-        "score": 2,
-        "pron": "F L UW1",
-        "word": "flu"
-      },
-      {
-        "score": 2,
-        "pron": "F L UW1",
-        "word": "flue"
-      },
-      {
-        "score": 2,
-        "pron": "G L UW1",
-        "word": "glew"
-      },
-      {
-        "score": 2,
-        "pron": "G L UW1",
-        "word": "glue"
-      },
-      {
-        "score": 2,
-        "pron": "HH AH2 L AH0 B AH0 L UW1",
-        "word": "hullabaloo"
-      },
-      {
-        "score": 2,
-        "pron": "K L UW1",
-        "word": "klu"
-      },
-      {
-        "score": 2,
-        "pron": "L UW1",
-        "word": "leu"
-      },
-      {
-        "score": 2,
-        "pron": "L UW1",
-        "word": "lew"
-      },
-      {
-        "score": 2,
-        "pron": "L UW1",
-        "word": "lieu"
-      },
-      {
-        "score": 2,
-        "pron": "L UW1",
-        "word": "loo"
-      },
-      {
-        "score": 2,
-        "pron": "L UW1",
-        "word": "lou"
-      },
-      {
-        "score": 2,
-        "pron": "L UW1",
-        "word": "louw"
-      },
-      {
-        "score": 2,
-        "pron": "L UW1",
-        "word": "loux"
-      }
+      "deblois",
+      "ballou",
+      "bellew",
+      "carilou",
+      "chaloux",
+      "clue",
+      "flew",
+      "flu",
+      "flue",
+      "glew"
     ]
   }
 }
