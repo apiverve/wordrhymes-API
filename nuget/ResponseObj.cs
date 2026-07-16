@@ -25,6 +25,9 @@ namespace APIVerve.API.RhymingWords
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -33,21 +36,21 @@ namespace APIVerve.API.RhymingWords
         public string Word { get; set; }
 
         [JsonProperty("rhymeCount")]
-        public long RhymeCount { get; set; }
+        public long? RhymeCount { get; set; }
 
         [JsonProperty("rhymes")]
-        public Rhyme[] Rhymes { get; set; }
+        public string[] Rhymes { get; set; }
     }
 
-    public partial class Rhyme
+    public partial class Premium
     {
-        [JsonProperty("score")]
-        public long Score { get; set; }
+        [JsonProperty("message")]
+        public string Message { get; set; }
 
-        [JsonProperty("pron")]
-        public string Pron { get; set; }
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
 
-        [JsonProperty("word")]
-        public string Word { get; set; }
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
